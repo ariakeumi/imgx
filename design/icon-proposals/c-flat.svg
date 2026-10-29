@@ -1,0 +1,16 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#37a2ff"/>
+      <stop offset="1" stop-color="#0a70f5"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="24" flood-color="#03264d" flood-opacity="0.30"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <polygon points="150,724 452,232 654,724" fill="#ffffff" fill-opacity="0.45"/>
+  <polygon points="416,724 664,318 894,724" fill="#ffffff"/>
+</svg>

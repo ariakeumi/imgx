@@ -1,6 +1,3 @@
-[submodule "crates/minifier/libavif-rs"]
-	path = crates/minifier/libavif-rs
-	url = git@github.com:njaard/libavif-rs.git
 [submodule "deps/libheif-sys"]
 	path = deps/libheif-sys
 	url = https://github.com/Cykooz/libheif-sys.git

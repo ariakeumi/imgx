@@ -1,58 +1,53 @@
-# IMGo
+# IMGX
 
 [English](./README.md) | [简体中文](./README.zh-CN.md)
 
-> [!IMPORTANT]
-> IMGo 是原版 [meowtec/Imagine](https://github.com/meowtec/Imagine) 的新一代重构版本。桌面端已从 Electron 重构为 Tauri，安装体积更小、支持更多图片格式，并提供可直接在浏览器中使用的完整网页版。
->
-> 如果你更习惯原版的 UI 交互，但又需要更多格式支持，可以考虑 [Imagine-plus](https://github.com/xianfei/Imagine-plus)。
+IMGX（image optimizer）是一个本地批量图片压缩与格式转换工具。一次处理多张图片，自由调整画质与尺寸，在各种常见格式之间转换，全程不上传你的文件。
 
-IMGo（`image optimizer` 的缩写）是一款注重隐私的批量图片压缩与格式转换工具。你可以一次处理多张图片，调整画质和尺寸，并在常见图片格式之间转换，全程无需上传文件。
+IMGX 是 [meowtec/Imagine](https://github.com/meowtec/Imagine) 的重写版。它现在是一个完全原生的应用：SwiftUI 界面 + Rust 压缩核心，不内嵌任何浏览器。
 
-![IMGo 批量处理界面](./docs/images/imgo.webp)
+![IMGX 批量处理界面](./docs/images/imgo.webp)
 
-![IMGo 图片对比界面](./docs/images/imgo-2.webp)
+## 功能
 
-## 功能特点
+- 批量图片压缩与格式转换
+- 本地处理：图片不出设备
+- 画质、无损、缩放、元数据控制
+- 支持动图 PNG、GIF、WebP、AVIF
+- macOS 原生应用（Apple Silicon 与 Intel）
+- 拖拽导入、Finder 文件关联、文件夹导入
 
-- 批量压缩图片与转换格式
-- 本地处理，图片始终留在你的设备上
-- 支持画质、无损模式、尺寸和元数据选项
-- 支持动态 PNG、GIF、WebP 和 AVIF
-- 提供 macOS、Windows 和 Linux 原生桌面应用
-- 提供无需安装的浏览器版本
+## 输出格式
 
-## 目标格式
+JPEG、PNG、GIF、WebP、AVIF、HEIC、JPEG XL（JXL）
 
-| 版本   | 目标格式                                        |
-| ------ | ----------------------------------------------- |
-| 网页版 | JPEG、PNG、GIF、WebP、AVIF、HEIC                |
-| 桌面版 | JPEG、PNG、GIF、WebP、AVIF、HEIC、JPEG XL (JXL) |
+支持动图 PNG、GIF、WebP、AVIF 输出。
 
-支持输出动态 PNG、GIF、WebP 和 AVIF。
+## 下载
 
-## 在线使用
+从 [GitHub Releases](https://github.com/meowtec/imgo/releases) 下载最新的 DMG。
 
-打开 [imgo.app](https://imgo.app/) 即可开始处理图片。网页版在浏览器本地运行，无需上传图片。
+通用 DMG 同时支持 Apple Silicon 与 Intel 芯片（macOS 14 及以上）。
 
-## 下载桌面版
-
-前往 [GitHub Releases](https://github.com/meowtec/imgo/releases) 下载最新版本。
-
-| 平台    | 下载文件                             |
-| ------- | ------------------------------------ |
-| macOS   | 适用于 Apple 芯片或 Intel 芯片的 DMG |
-| Windows | 适用于 ARM64 或 x64 的安装程序       |
-| Linux   | 适用于 ARM64 或 x64 的 AppImage      |
-
-请选择与你的操作系统和处理器相匹配的文件，然后打开文件安装或运行 IMGo。
-
-当前 Windows 安装程序尚未签名，macOS 应用也尚未经过公证。首次打开时，操作系统可能会显示安全提示。
-
-如果 macOS 阻止 IMGo 打开，请先将 `IMGo.app` 移动到“应用程序”文件夹，然后打开“终端”并运行：
+应用未做公证，首次打开时 macOS 可能弹出安全提示。如果系统阻止打开
+IMGX，请先把 `IMGX.app` 移到「应用程序」文件夹，再在终端执行：
 
 ```bash
-xattr -cr "/Applications/IMGo.app"
+xattr -cr "/Applications/IMGX.app"
 ```
 
-运行后再次打开 IMGo。
+然后重新打开 IMGX。
+
+## 开发
+
+见 [docs/development.md](./docs/development.md)。简要步骤：
+
+```bash
+./scripts/init-deps.sh   # 初始化 submodule 并应用补丁
+./macos/build-core.sh    # 构建 Rust 静态库
+cd macos && xcodebuild -project IMGo.xcodeproj -scheme IMGo build
+```
+
+## 许可
+
+MIT

@@ -1,0 +1,24 @@
+<svg width="1024" height="1024" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8f0f9"/>
+    </linearGradient>
+    <linearGradient id="gray" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#aab3c0"/>
+      <stop offset="1" stop-color="#6f7a8b"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#57b6ff"/>
+      <stop offset="1" stop-color="#0b6cf0"/>
+    </linearGradient>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="10" stdDeviation="24" flood-color="#0a1a2f" flood-opacity="0.18"/>
+    </filter>
+  </defs>
+
+  <rect x="100" y="100" width="824" height="824" rx="185" fill="url(#bg)" filter="url(#shadow)"/>
+
+  <polygon points="196,690 448,258 600,690" fill="url(#gray)" stroke="url(#gray)" stroke-width="20" stroke-linejoin="round"/>
+  <polygon points="432,690 646,340 862,690" fill="url(#blue)" stroke="url(#blue)" stroke-width="20" stroke-linejoin="round"/>
+</svg>

@@ -1,0 +1,4 @@
+module CMinifier {
+    header "imgo_minifier.h"
+    export *
+}

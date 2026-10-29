@@ -15,64 +15,47 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  EMSDK_VERSION: 6.0.4
-  NODE_VERSION: 24.18.0
   RUST_VERSION: 1.97.1
 
 jobs:
   check:
     name: Lint, test, and build
-    runs-on: ubuntu-24.04
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v7
         with:
           submodules: recursive
 
       - name: Install native build dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y build-essential clang cmake nasm ninja-build pkg-config
-
-      - uses: pnpm/setup@v2
-        with:
-          runtime: node@${{ env.NODE_VERSION }}
-          cache: true
+        run: brew install cmake ninja meson nasm
 
       - uses: dtolnay/rust-toolchain@stable
         with:
-          components: rustfmt
+          components: rustfmt, clippy
           toolchain: ${{ env.RUST_VERSION }}
-          targets: wasm32-unknown-unknown,wasm32-unknown-emscripten
 
       - name: Apply native source patches
-        run: pnpm run init:src
+        run: ./scripts/init-deps.sh
 
       - uses: Swatinem/rust-cache@v2
         with:
           cache-targets: false
 
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: wasm-pack@0.15.0
-          fallback: none
-
-      - uses: emscripten-core/setup-emsdk@v16
-        with:
-          version: ${{ env.EMSDK_VERSION }}
-
-      - name: Build shared JS bindings
-        run: pnpm run rsts
-
-      - name: Build minifier JS wrapper
-        run: pnpm --filter @imgo/minifier-js build
-
-      - name: Lint
-        run: pnpm run lint
-
-      - name: Build
-        run: |
-          pnpm --filter @imgo/minifier-js build:wasm
-          pnpm --filter @imgo/web build
+      - name: Format
+        run: cargo fmt --all --check
 
       - name: Test
-        run: pnpm test
+        run: cargo test -p imgo-shared -p minifier -p minifier-ffi
+
+      - name: Build Rust core for the app
+        run: ./macos/build-core.sh
+
+      - name: Build macOS app
+        run: |
+          set -o pipefail
+          xcodebuild -project macos/IMGo.xcodeproj \
+            -scheme IMGo \
+            -configuration Debug \
+            -destination 'platform=macOS' \
+            build \
+            | tail -20

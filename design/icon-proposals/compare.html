@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; }
+  body { width: 1400px; font-family: -apple-system, "PingFang SC", sans-serif; }
+  .row { display: flex; align-items: center; padding: 34px 50px; gap: 56px; }
+  .row.light { background: #eceff3; }
+  .row.dark { background: #1d2127; }
+  .cell { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .label { font-size: 22px; }
+  .light .label { color: #3a3f47; }
+  .dark .label { color: #aeb4bd; }
+  .pair { display: flex; align-items: flex-end; gap: 18px; }
+  .big img { width: 128px; height: 128px; display: block; }
+  .small img { width: 32px; height: 32px; display: block; margin-bottom: 2px; }
+</style>
+</head>
+<body>
+  <div class="row light">
+    <div class="cell"><div class="pair"><div class="big"><img src="original-128.png"></div><div class="small"><img src="original-128.png"></div></div><div class="label">原版</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="a-gradient.png"></div><div class="small"><img src="a-gradient.png"></div></div><div class="label">方案 A</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="b-dark.png"></div><div class="small"><img src="b-dark.png"></div></div><div class="label">方案 B</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="c-flat.png"></div><div class="small"><img src="c-flat.png"></div></div><div class="label">方案 C</div></div>
+  </div>
+  <div class="row dark">
+    <div class="cell"><div class="pair"><div class="big"><img src="original-128.png"></div><div class="small"><img src="original-128.png"></div></div><div class="label">原版</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="a-gradient.png"></div><div class="small"><img src="a-gradient.png"></div></div><div class="label">方案 A</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="b-dark.png"></div><div class="small"><img src="b-dark.png"></div></div><div class="label">方案 B</div></div>
+    <div class="cell"><div class="pair"><div class="big"><img src="c-flat.png"></div><div class="small"><img src="c-flat.png"></div></div><div class="label">方案 C</div></div>
+  </div>
+</body>
+</html>

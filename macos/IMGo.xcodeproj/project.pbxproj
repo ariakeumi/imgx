@@ -1,0 +1,153 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	objectVersion = 70;
+	classes = {
+	};
+	objects = {
+
+/* Begin PBXBuildFile section */
+
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1400000000000000000000A2 /* IMGX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMGX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		1400000000000000000000A1 /* IMGo */ = {isa = PBXFileSystemSynchronizedRootGroup; path = IMGo; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1400000000000000000000A3 /* Frameworks */ = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1400000000000000000000A4 = {isa = PBXGroup; children = (
+			1400000000000000000000A1 /* IMGo */,
+			1400000000000000000000A5 /* Products */,
+		); sourceTree = "<group>"; };
+		1400000000000000000000A5 /* Products */ = {isa = PBXGroup; children = (
+			1400000000000000000000A2 /* IMGX.app */,
+		); name = Products; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1400000000000000000000A6 /* IMGo */ = {isa = PBXNativeTarget; buildConfigurationList = 1400000000000000000000AA; buildPhases = (
+			1400000000000000000000A7 /* Sources */,
+			1400000000000000000000A3 /* Frameworks */,
+			1400000000000000000000A8 /* Resources */,
+		); buildRules = (
+		); dependencies = (
+		); fileSystemSynchronizedGroups = (
+			1400000000000000000000A1 /* IMGo */,
+		); name = IMGo; productName = IMGo; productReference = 1400000000000000000000A2 /* IMGX.app */; productType = "com.apple.product-type.application"; };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1400000000000000000000A9 /* Project object */ = {isa = PBXProject; attributes = {
+			BuildIndependentTargetsInParallel = 1;
+			LastSwiftUpdateCheck = 1600;
+			LastUpgradeCheck = 1600;
+			TargetAttributes = {
+				1400000000000000000000A6 = {CreatedOnToolsVersion = 16.0;};
+			};
+		}; buildConfigurationList = 1400000000000000000000AD; compatibilityVersion = "Xcode 15.0"; developmentRegion = en; hasScannedForEncodings = 0; knownRegions = (
+			en,
+			Base,
+		); mainGroup = 1400000000000000000000A4; productRefGroup = 1400000000000000000000A5 /* Products */; projectDirPath = ""; projectRoot = ""; targets = (
+			1400000000000000000000A6 /* IMGo */,
+		); };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1400000000000000000000A8 /* Resources */ = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1400000000000000000000A7 /* Sources */ = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1400000000000000000000AB /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			DEBUG_INFORMATION_FORMAT = dwarf;
+			ENABLE_STRICT_OBJC_MSGSEND = YES;
+			ENABLE_TESTABILITY = YES;
+			GCC_OPTIMIZATION_LEVEL = 0;
+			MACOSX_DEPLOYMENT_TARGET = 14.0;
+			ONLY_ACTIVE_ARCH = YES;
+			SDKROOT = macosx;
+			SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+			SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+		}; name = Debug; };
+		1400000000000000000000AC /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			CLANG_ENABLE_MODULES = YES;
+			DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+			ENABLE_NS_ASSERTIONS = NO;
+			MACOSX_DEPLOYMENT_TARGET = 14.0;
+			SDKROOT = macosx;
+			SWIFT_COMPILATION_MODE = wholemodule;
+			SWIFT_OPTIMIZATION_LEVEL = "-O";
+			VALIDATE_PRODUCT = YES;
+		}; name = Release; };
+		1400000000000000000000AE /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {
+			COMBINE_HIDPI_IMAGES = YES;
+			CODE_SIGN_IDENTITY = "-";
+			CODE_SIGN_STYLE = Manual;
+			CURRENT_PROJECT_VERSION = 1;
+			DEAD_CODE_STRIPPING = YES;
+			ENABLE_PREVIEWS = NO;
+			GENERATE_INFOPLIST_FILE = NO;
+			HEADER_SEARCH_PATHS = ("$(inherited)", "$(PROJECT_DIR)/Bridge");
+			INFOPLIST_FILE = Info.plist;
+			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+			LIBRARY_SEARCH_PATHS = ("$(inherited)", "$(PROJECT_DIR)/Vendor");
+			MARKETING_VERSION = 1.1.0;
+			OTHER_LDFLAGS = ("$(inherited)", "$(PROJECT_DIR)/Vendor/libminifier_ffi.a", "-lc++");
+			PRODUCT_BUNDLE_IDENTIFIER = ariakeumi.imgx;
+			PRODUCT_NAME = IMGX;
+			SWIFT_EMIT_LOC_STRINGS = NO;
+			SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Bridge";
+			SWIFT_VERSION = 5.0;
+		}; name = Debug; };
+		1400000000000000000000AF /* Release */ = {isa = XCBuildConfiguration; buildSettings = {
+			COMBINE_HIDPI_IMAGES = YES;
+			CODE_SIGN_IDENTITY = "-";
+			CODE_SIGN_STYLE = Manual;
+			CURRENT_PROJECT_VERSION = 1;
+			DEAD_CODE_STRIPPING = YES;
+			ENABLE_PREVIEWS = NO;
+			GENERATE_INFOPLIST_FILE = NO;
+			HEADER_SEARCH_PATHS = ("$(inherited)", "$(PROJECT_DIR)/Bridge");
+			INFOPLIST_FILE = Info.plist;
+			LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/../Frameworks");
+			LIBRARY_SEARCH_PATHS = ("$(inherited)", "$(PROJECT_DIR)/Vendor");
+			MARKETING_VERSION = 1.1.0;
+			OTHER_LDFLAGS = ("$(inherited)", "$(PROJECT_DIR)/Vendor/libminifier_ffi.a", "-lc++");
+			PRODUCT_BUNDLE_IDENTIFIER = ariakeumi.imgx;
+			PRODUCT_NAME = IMGX;
+			SWIFT_EMIT_LOC_STRINGS = NO;
+			SWIFT_INCLUDE_PATHS = "$(PROJECT_DIR)/Bridge";
+			SWIFT_VERSION = 5.0;
+		}; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1400000000000000000000AA /* Build configuration list for PBXNativeTarget "IMGo" */ = {isa = XCConfigurationList; buildConfigurations = (
+			1400000000000000000000AE /* Debug */,
+			1400000000000000000000AF /* Release */,
+		); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		1400000000000000000000AD /* Build configuration list for PBXProject "IMGo" */ = {isa = XCConfigurationList; buildConfigurations = (
+			1400000000000000000000AB /* Debug */,
+			140000000000000000000000AC /* Release */,
+		); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 1400000000000000000000A9 /* Project object */;
+}

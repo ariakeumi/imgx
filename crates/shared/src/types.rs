@@ -1,12 +1,10 @@
 use serde::{Deserialize, Serialize};
-use ts_rs::TS;
-use tsify::Tsify;
 
 fn default_quality() -> u8 {
   85
 }
 
-#[derive(Clone, Copy, PartialEq, Eq, Debug, Hash, Deserialize, Serialize, Tsify, TS)]
+#[derive(Clone, Copy, PartialEq, Eq, Debug, Hash, Deserialize, Serialize)]
 #[serde(rename_all = "UPPERCASE")]
 pub enum ImageFormat {
   Png = 1,
@@ -29,13 +27,13 @@ pub enum ImageFormat {
   Jxl = 17,
 }
 
-#[derive(Clone, Debug, PartialEq, Serialize, Deserialize, Tsify, TS)]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 pub struct Size {
   pub width: u32,
   pub height: u32,
 }
 
-#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize, Tsify, TS)]
+#[derive(Clone, Copy, Debug, PartialEq, Eq, Serialize, Deserialize)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 pub enum ResizeType {
   Exact = 0,
@@ -43,34 +41,28 @@ pub enum ResizeType {
   DownsizeCover = 2,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize, Tsify, TS)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct ImageResolution {
   pub width: u32,
   pub height: u32,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize, Tsify, TS)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct ResizeOptions {
   pub width: u32,
   pub height: u32,
   pub r#type: ResizeType,
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize, Tsify)]
+#[derive(Clone, Debug, Serialize, Deserialize)]
 pub struct OptimizeOptions {
   /// use indexed color, png only
-  #[tsify(optional)]
   pub indexed: Option<bool>,
   #[serde(default = "default_quality")]
   pub quality: u8,
-  #[tsify(optional)]
   pub lossless: Option<bool>,
-  #[tsify(optional)]
   pub preserve_metadata: Option<bool>,
-  #[tsify(optional)]
   pub resize: Option<ResizeOptions>,
-  #[tsify(optional)]
   pub speed: Option<u8>,
-  #[tsify(optional)]
   pub fastest: Option<bool>,
 }
